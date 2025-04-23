@@ -1,4 +1,5 @@
 <x-app-layout>
+    @section('title', 'CRA Management')
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
             {{ __('CRA Leadership and staff') }}

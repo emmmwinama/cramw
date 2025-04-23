@@ -1,4 +1,5 @@
 <x-app-layout>
+    @section('title', 'Publications and Resources')
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
             {{ __('Our Publications') }}
@@ -9,13 +10,13 @@
             <div class="w-full">
                 <div class="grid grid-cols-1 md:grid-cols-7 gap-0 md:gap-x-2">
                     <div class="col-span-1 md:col-span-5 md:mb-4">
-                        <div class="mb-4">Welcome to our Publications Page! Here, you'll find a curated collection of insightful articles, news updates, research papers, and official documents that reflect our latest work and initiatives.
+                        <div class="mb-4 text-gray-800 dark:text-gray-200">Welcome to our Publications Page! Here, you'll find a curated collection of insightful articles, news updates, research papers, and official documents that reflect our latest work and initiatives.
                         </div>
                         @if($publications->count())
                             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
                                 @foreach($publications as $publication)
                                     <div class="border-t-2 border-[#DEC23D] relative inset-0 hover:bg-[#074923] hover:bg-opacity-5 hover:shadow">
-                                        <a href="{{ route('contact-form') }}" class="absolute w-full h-full"></a>
+                                        <a href="{{ $publication->file }}" class="absolute w-full h-full"></a>
                                         <p class="text-sm font-bold  self-end absolute py-1 px-3 bg-[#DEC23D] text-gray-100 rounded-br-lg">{{ $publication->type }}</p>
                                         <div class="mt-10 mb-4">
                                             <p class="font-extrabold text-lg m-2">{{ $publication->name }}</p>
